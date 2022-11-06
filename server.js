@@ -1,12 +1,12 @@
-import { Database } from './lib/database.js';
+import Cluster from './lib/database.js';
 
-const database = new Database();
+const cluster = new Cluster();
 
-const cursor = database.connect('public');
+const database = await cluster.use('public');
 
-const users = cursor.collection('users');
+const users = await database.collection('users');
 
-const result = users.find({ name: 'Greeshma' });
+const result = users.find();
 
 console.log('result: ', result);
 // Request comes in
