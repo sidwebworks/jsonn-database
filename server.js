@@ -9,4 +9,3 @@ const users = await database.collection('users');
 const result = users.find();
 
 console.log('result: ', result);
-// Request comes in
